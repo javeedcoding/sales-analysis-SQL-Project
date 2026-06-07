@@ -13,7 +13,13 @@ This project analyzes a sales dataset using PostgreSQL.
 - Window Functions
 
 ## Key Insights
-- Identified top-performing countries.
-- Analyzed sales by product line.
-- Ranked countries by total sales.
-- Used advanced SQL techniques for business insights.
+
+• USA generated the highest total sales (3,627,982.83).
+
+• Large deal sizes contributed significantly to overall revenue.
+
+• Sales were concentrated in a few top-performing countries.
+
+• Product lines showed different sales patterns and rankings.
+
+• Ranking functions helped identify top-performing categories and countries.
