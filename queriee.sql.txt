@@ -1,0 +1,58 @@
+Q1. total sales done by company
+select country,sum(sales) as total_sales
+from sales_project
+group by country;
+
+Q2.Top 3 product line with total sales
+select productline,sum(sales) as total_sales,row_number() over(order by sum(sales) desc)
+from sales_projecct
+limit 3;
+
+Q3.most frequent deal size
+select dealsize,count(*)
+from sales_project
+group by dealsize;
+
+Q4.highest total sales by month
+select month,sum(sales) as total_sales
+from sales_project
+group by month
+order by total_sales desc
+limit 1;
+
+Q5.Top 3 product line by sales
+select productline,sales
+from sales_project
+order by sales
+limit 3;
+
+Q6.list of countries with high sales
+select country,sales
+from sales_project
+order by country desc;
+
+Q7.Total sales countries have more than 5lakh
+select country,sum(sales) as total_sales
+from sales_project
+group by country
+having sum(sales)>500000;
+
+Q8.compare countries with highest sales with average sales
+select country,sum(sales) as total_sales
+from sales_project
+group by country
+having sum(sales)>(
+     select avg(sales)
+     from sales_project
+);
+
+Q9.highest total sales with CTE
+with highest_total_sales as(
+select country,sum(sales) as total_sales
+from sales_project
+group by country
+order by total_sales desc
+limit 1
+)
+select *
+from highest_total_sales;
