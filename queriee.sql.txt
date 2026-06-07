@@ -5,7 +5,7 @@ group by country;
 
 Q2.Top 3 product line with total sales
 select productline,sum(sales) as total_sales,row_number() over(order by sum(sales) desc)
-from sales_projecct
+from sales_project
 limit 3;
 
 Q3.most frequent deal size
@@ -31,7 +31,7 @@ select country,sales
 from sales_project
 order by country desc;
 
-Q7.Total sales countries have more than 5lakh
+Q7.Total sales countries have more than 5 lakh
 select country,sum(sales) as total_sales
 from sales_project
 group by country
